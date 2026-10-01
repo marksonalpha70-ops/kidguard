@@ -1,0 +1,36 @@
+# KidGuard - Cloudflare Worker Config
+name = "kidguard-api"
+main = "index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# =====================
+# D1 Database Binding
+# =====================
+[[d1_databases]]
+binding = "DB"
+database_name = "kidguard-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+# =====================
+# Environment Variables
+# =====================
+[vars]
+ENVIRONMENT = "production"
+
+# =====================
+# Secrets (set via dashboard)
+# JWT_SECRET = set in Cloudflare dashboard
+# =====================
+
+# =====================
+# Build Config
+# =====================
+[build]
+command = ""
+
+# =====================
+# Routes
+# =====================
+[env.production]
+name = "kidguard-api"
